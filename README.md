@@ -1,4 +1,4 @@
-# 🌍 AWED-FiNER: Agentic Web-based Entity Detector - Fine-grained
+# 🌍 AWED-FiNER: Agentic Web-based Entity Detector for Fine-grained Named Entity Recognition
 **36 Languages | 6.6 Billion People | 2 Fine-grained Taxonomies**
 
 AWED-FiNER is a unified **Agentic AI Tool** designed to bridge the gap between global high-resource languages and vulnerable linguistic communities. It provides high-precision, Fine-grained Named Entity Recognition (FgNER) by routing queries to 36 specialized expert models.
