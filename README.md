@@ -39,7 +39,7 @@ agent = CodeAgent(tools=[ner_tool], model=HfApiModel())
 
 # The agent will automatically use AWED-FiNER for specialized NER
 # Case: Processing a vulnerable language (Bodo)
-agent.run("Identify the named entities in this Bodo sentence: 'बिथाङा दिल्लियाव थाङो।'")
+agent.run("Recognize the named entities in this Bodo sentence: 'बिथाङा दिल्लियाव थाङो।'")
 ```
 
 ## 🔗 Project Links
