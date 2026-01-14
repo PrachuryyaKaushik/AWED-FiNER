@@ -1,7 +1,6 @@
-# 🌍 AWED-FiNER: Agentic Web-based Entity Detector for Fine-grained Named Entity Recognition
-**36 Languages | 6.6 Billion People | 2 Fine-grained Taxonomies**
+# 🌍 AWED-FiNER: Agents, Web apps, and Expert Detectors for Fine-grained Named Entity Recognition for 36 languages with 6.6 billion speakers
 
-AWED-FiNER is a unified **Agentic AI Tool** designed to bridge the gap between global high-resource languages and vulnerable linguistic communities. It provides high-precision, Fine-grained Named Entity Recognition (FgNER) by routing queries to 36 specialized expert models.
+AWED-FiNER agentic tool is a unified **Agentic AI Tool** designed to bridge the gap between global high-resource languages and vulnerable linguistic communities. It provides high-precision, Fine-grained Named Entity Recognition (FgNER) by routing queries to 36 specialized expert models.
 
 ## 🌟 Why AWED-FiNER?
 While standard Large Language Models (LLMs) are powerful, they often struggle with:
@@ -44,9 +43,9 @@ agent.run("Recognize the named entities in this Bodo sentence: 'बिथाङ�
 
 ## 🔗 Project Links
 
-* Interactive Demo: [AWED-FiNER](https://huggingface.co/spaces/prachuryyaIITG/AWED-FiNER)  &emsp; [SampurNER-demo](https://huggingface.co/spaces/prachuryyaIITG/SampurNER-Demo)
+* Interactive Demo: [AWED-FiNER](https://huggingface.co/spaces/prachuryyaIITG/AWED-FiNER)
 
-* Model Hub: [49 models](https://huggingface.co/prachuryyaIITG/models) for Multilingual Fine-grained NER in HuggingFace
+* Model Hub: [Language specific Models](https://huggingface.co/prachuryyaIITG/models) for Fine-grained NER in HuggingFace
 
 * Author Profile: Prachuryya Kaushik: [LinkedIn](https://www.linkedin.com/in/prachuryyakaushik/)  &emsp;  [Google Scholar](https://scholar.google.com/citations?user=dyGLivYAAAAJ&hl=en)  &emsp;  [Hugging Face](https://huggingface.co/prachuryyaIITG)
 
