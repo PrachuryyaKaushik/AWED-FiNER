@@ -1,4 +1,4 @@
-# 🌍 AWED-FiNER: Agents, Web applications, and Expert Detectors for Fine-grained Named Entity Recognition across 36 languages for 6.6 billion speakers
+# 🌍 AWED-FiNER: Agents, Web applications, and Expert Detectors for Fine-grained Named Entity Recognition across 36 Languages for 6.6 Billion Speakers
 
 AWED-FiNER agentic tool is a unified **Agentic AI Tool** designed to bridge the gap between global high-resource languages and vulnerable linguistic communities. It provides high-precision, Fine-grained Named Entity Recognition (FgNER) by routing queries to 36 specialized expert models.
 
@@ -56,6 +56,15 @@ agent.run("Recognize the named entities in this Bodo sentence: 'बिथाङ�
 If you use this tool, please cite the following papers:
 
 ```bibtex
+@misc{kaushik2026awedfiner,
+  title        = {AWED-FiNER: Agents, Web Applications, and Expert Detectors for Fine-grained Named Entity Recognition across 36 Languages for 6.6 Billion Speakers},
+  author       = {Kaushik, Prachuryya and Anand, Ashish},
+  year         = {2026},
+  note         = {arXiv preprint, submitted},
+  archivePrefix= {arXiv},
+  eprint       = {submit/7163987}
+}
+
 @inproceedings{kaushik2026sampurner,
   title={SampurNER: Fine-grained Named Entity Recognition Dataset for 22 Indian Languages},
   author={Kaushik, Prachuryya and Anand, Ashish},
