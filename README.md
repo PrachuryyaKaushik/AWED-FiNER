@@ -9,11 +9,11 @@ While standard Large Language Models (LLMs) are powerful, they often struggle wi
 3.  **Digital Preservation:** Providing state-of-the-art AI support for 26 Indian languages and 10 global languages spoken by over 80% of the world's population.
 
 ## 🏗️ Technical Architecture
-AWED-FiNER acts as a **Routing Agent**. It functions as a "capability" that can be plugged into any LLM. Instead of using one general-purpose model, it identifies the input language and calls a specialized, fine-tuned "Expert Model" (mBERT, XLM-R, or IndicBERTv2) hosted on Hugging Face.
+AWED-FiNER acts as a **Routing Agent Tool** callable by LLM agents (e.g., smolagents, LangChain, or custom agents). It functions as a specialized capability hosted on Hugging Face Spaces. Instead of using one general-purpose model, it routes requests to a specialized, fine-tuned "Expert Model" (mBERT, XLM-R, or IndicBERTv2) optimized for each supported language. The tool is exposed via a production-ready Gradio API endpoint (`/predict`) and accessed programmatically using `gradio_client`.
 
 **Core Datasets:**
 * **SampurNER:** Comprehensive NER for 22 Indian languages. [Dataset](https://huggingface.co/datasets/prachuryyaIITG/SampurNER) [Paper](https://github.com/PrachuryyaKaushik/SampurNER/blob/main/SampurNER_AAAI_extended.pdf)
-* **CLASSER:** Multilingual fine-grained datasets for five low-resource Indian languages. [Dataset](https://huggingface.co/datasets/prachuryyaIITG/CLASSER) [Paper](https://huggingface.co/datasets/prachuryyaIITG/CLASSER)
+* **CLASSER:** Multilingual fine-grained datasets for five low-resource Indian languages. [Dataset](https://huggingface.co/datasets/prachuryyaIITG/CLASSER) [Paper](https://aclanthology.org/2025.ijcnlp-long.94/)
 * **MultiCoNER2:** SemEval-23 task contributing extensively to global FgNER research. [Dataset](https://huggingface.co/datasets/MultiCoNER/multiconer_v2) [Paper](https://aclanthology.org/2023.findings-emnlp.134/)
  
 
@@ -25,20 +25,40 @@ AWED-FiNER acts as a **Routing Agent**. It functions as a "capability" that can 
 ```bash
 pip install smolagents gradio_client
 ```
-
+### 2. Usage with smolagents
 ```python
 from smolagents import CodeAgent, HfApiModel
 from tool import AWEDFiNERTool
 
-# Initialize the expert tool
-ner_tool = AWEDFiNERTool()
+# Initialize the expert tool (connects to Hugging Face Space API)
+ner_tool = AWEDFiNERTool(
+    space_id="prachuryyaIITG/AWED-FiNER"
+)
 
 # Initialize the agent (using a model of your choice)
-agent = CodeAgent(tools=[ner_tool], model=HfApiModel())
+agent = CodeAgent(
+    tools=[ner_tool],
+    model=HfApiModel()
+)
 
-# The agent will automatically use AWED-FiNER for specialized NER
+# The agent will automatically use AWED-FiNER via the /predict API endpoint
 # Case: Processing a vulnerable language (Bodo)
 agent.run("Recognize the named entities in this Bodo sentence: 'बिथाङा दिल्लियाव थाङो।'")
+```
+### 3. Direct Tool Usage (without agent)
+```python
+from tool import AWEDFiNERTool
+
+tool = AWEDFiNERTool(
+    space_id="prachuryyaIITG/AWED-FiNER"
+)
+
+result = tool.forward(
+    text="Jude Bellingham joined Real Madrid in 2023.",
+    language="English"
+)
+
+print(result)
 ```
 
 ## 🔗 Project Links
@@ -47,7 +67,7 @@ agent.run("Recognize the named entities in this Bodo sentence: 'बिथाङ�
 
 * Model Hub: [Language specific Models](https://huggingface.co/prachuryyaIITG/models) for Fine-grained NER in HuggingFace
 
-* Author Profile: Prachuryya Kaushik: [LinkedIn](https://www.linkedin.com/in/prachuryyakaushik/)  &emsp;  [Google Scholar](https://scholar.google.com/citations?user=dyGLivYAAAAJ&hl=en)  &emsp;  [Hugging Face](https://huggingface.co/prachuryyaIITG)
+* Author Profile: Prachuryya Kaushik: [LinkedIn](https://www.linkedin.com/in/pkabundant/)  &emsp;  [Google Scholar](https://scholar.google.com/citations?user=dyGLivYAAAAJ&hl=en)  &emsp;  [Hugging Face](https://huggingface.co/prachuryyaIITG)
 
 
 
@@ -73,13 +93,18 @@ If you use this tool, please cite the following papers:
   year={2026}
 }
 
-@inproceedings{kaushik2025classer,
-  title     = {{CLASSER}: Cross-lingual Annotation Projection enhancement through Script Similarity for Fine-grained Named Entity Recognition},
-  author    = {Kaushik, Prachuryya and Anand, Ashish},
-  booktitle = {Proceedings of the 14th International Joint Conference on Natural Language Processing and the 4th Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics},
-  year      = {2025},
-  publisher = {Association for Computational Linguistics},
-  note      = {Main conference paper}
+@inproceedings{kaushik-anand-2025-classer,
+    title = "{CLASSER}: Cross-lingual Annotation Projection enhancement through Script Similarity for Fine-grained Named Entity Recognition",
+    author = "Kaushik, Prachuryya  and
+      Anand, Ashish",
+    booktitle = "Proceedings of the 14th International Joint Conference on Natural Language Processing and the 4th Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics",
+    month = dec,
+    year = "2025",
+    address = "Mumbai, India",
+    publisher = "The Asian Federation of Natural Language Processing and The Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.ijcnlp-long.94/",
+    pages = "1745--1760",
+    ISBN = "979-8-89176-298-5",
 }
 
 @inproceedings{fetahu2023multiconer,
