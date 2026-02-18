@@ -18,14 +18,13 @@ AWED-FiNER acts as a **Routing Agent Tool** callable by LLM agents (e.g., smolag
  
 
 
-
 ## 🛠️ Quick Start (Agentic Tool)
 
 ### 1. Installation
 ```bash
 pip install smolagents gradio_client
 ```
-### 2. Direct Tool Usage (without agent)
+### 2. Tool Usage
 ```python
 from tool import AWEDFiNERTool
 
@@ -40,46 +39,43 @@ result = tool.forward(
 
 print(result)
 ```
-### 3. Usage with smolagents
+### 3. Example usage with Gemini
 ```python
-from smolagents import Tool
+import os
+import json
+from google import genai
+from google.genai import types
 from gradio_client import Client
 
-class AWEDFiNERTool(Tool):
-    name = "awed_finer_ner"
-    description = "Extracts fine-grained entities from text across 36 languages."
-    
-    # These attributes are REQUIRED for smolagents to work
-    inputs = {
-        "text": {
-            "type": "string",
-            "description": "The input text/sentence to analyze.",
-        },
-        "language": {
-            "type": "string",
-            "description": "The language of the text. Must be one of the supported 36 languages (e.g., English, Bodo, Hindi, etc.).",
-        }
-    }
-    output_type = "string"
+# 1. Setup
+# Ensure your API key is in the environment or pass it to the Client
+os.environ["GEMINI_API_KEY"] = "YOUR_GEMINI_API_KEY"
+client_gemini = genai.Client()
+client_gradio = Client("prachuryyaIITG/AWED-FiNER")
 
-    def __init__(self, space_id="prachuryyaIITG/AWED-FiNER", **kwargs):
-        super().__init__(**kwargs)
-        self.client = Client(space_id)
+# 2. Define the Tool Function
+def awed_finer_ner(text: str, language: str):
+    """
+    Extracts fine-grained named entities from text across 36 languages.
+    """
+    result = client_gradio.predict(
+        text=text,
+        language=language,
+        api_name="/predict"
+    )
+    return json.dumps(result)
 
-    def forward(self, text: str, language: str) -> str:
-        # Calls the /predict endpoint of your Gradio Space
-        result = self.client.predict(
-            text=text,
-            language=language,
-            api_name="/predict"
-        )
-        return str(result)
+# 3. Use the Tool with Gemini
+response = client_gemini.models.generate_content(
+    model="gemini-3-flash-preview",
+    contents="Identify the entities in this Bodo sentence: 'अमिताभ बच्चनआ सासे मुंदांखा फावखुंगुर।'",
+    config=types.GenerateContentConfig(
+        tools=[awed_finer_ner]
+    )
+)
 
-# Test the tool directly
-tool = AWEDFiNERTool()
-print(tool.forward("Jude Bellingham joined Real Madrid in 2023.", "English"))
+print(f"Gemini's Response:\n{response.text}")
 ```
-
 
 ## 🔗 Project Links
 
