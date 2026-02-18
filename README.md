@@ -25,27 +25,7 @@ AWED-FiNER acts as a **Routing Agent Tool** callable by LLM agents (e.g., smolag
 ```bash
 pip install smolagents gradio_client
 ```
-### 2. Usage with smolagents
-```python
-from smolagents import CodeAgent, HfApiModel
-from tool import AWEDFiNERTool
-
-# Initialize the expert tool (connects to Hugging Face Space API)
-ner_tool = AWEDFiNERTool(
-    space_id="prachuryyaIITG/AWED-FiNER"
-)
-
-# Initialize the agent (using a model of your choice)
-agent = CodeAgent(
-    tools=[ner_tool],
-    model=HfApiModel()
-)
-
-# The agent will automatically use AWED-FiNER via the /predict API endpoint
-# Case: Processing a vulnerable language (Bodo)
-agent.run("Recognize the named entities in this Bodo sentence: 'बिथाङा दिल्लियाव थाङो।'")
-```
-### 3. Direct Tool Usage (without agent)
+### 2. Direct Tool Usage (without agent)
 ```python
 from tool import AWEDFiNERTool
 
@@ -60,6 +40,46 @@ result = tool.forward(
 
 print(result)
 ```
+### 3. Usage with smolagents
+```python
+from smolagents import Tool
+from gradio_client import Client
+
+class AWEDFiNERTool(Tool):
+    name = "awed_finer_ner"
+    description = "Extracts fine-grained entities from text across 36 languages."
+    
+    # These attributes are REQUIRED for smolagents to work
+    inputs = {
+        "text": {
+            "type": "string",
+            "description": "The input text/sentence to analyze.",
+        },
+        "language": {
+            "type": "string",
+            "description": "The language of the text. Must be one of the supported 36 languages (e.g., English, Bodo, Hindi, etc.).",
+        }
+    }
+    output_type = "string"
+
+    def __init__(self, space_id="prachuryyaIITG/AWED-FiNER", **kwargs):
+        super().__init__(**kwargs)
+        self.client = Client(space_id)
+
+    def forward(self, text: str, language: str) -> str:
+        # Calls the /predict endpoint of your Gradio Space
+        result = self.client.predict(
+            text=text,
+            language=language,
+            api_name="/predict"
+        )
+        return str(result)
+
+# Test the tool directly
+tool = AWEDFiNERTool()
+print(tool.forward("Jude Bellingham joined Real Madrid in 2023.", "English"))
+```
+
 
 ## 🔗 Project Links
 
