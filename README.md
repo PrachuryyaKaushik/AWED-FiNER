@@ -83,7 +83,8 @@ print(f"Gemini's Response:\n{response.text}")
 
 * Model Hub: [Language specific Models](https://huggingface.co/prachuryyaIITG/models) for Fine-grained NER in HuggingFace
 
-* Author Profile: Prachuryya Kaushik: [LinkedIn](https://www.linkedin.com/in/pkabundant/)  &emsp;  [Google Scholar](https://scholar.google.com/citations?user=dyGLivYAAAAJ&hl=en)  &emsp;  [Hugging Face](https://huggingface.co/prachuryyaIITG)
+* Author Profile: Prachuryya Kaushik: [LinkedIn](https://www.linkedin.com/in/pkabundant/)  &emsp;  [Google Scholar](https://scholar.google.com/citations?user=dyGLivYAAAAJ&hl=en)  &emsp;  [Hugging Face](https://huggingface.co/prachuryyaIITG) <br>
+Prof. Ashish Anand: [LinkedIn](https://www.linkedin.com/in/anandashish/)  &emsp;  [Google Scholar](https://scholar.google.co.in/citations?user=W7nidBQAAAAJ&hl=en&oi=ao)  &emsp;  [Personal Website](https://www.iitg.ac.in/anand.ashish/)
 
 
 
