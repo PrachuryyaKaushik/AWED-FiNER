@@ -15,6 +15,11 @@ AWED-FiNER acts as a **Routing Agent Tool** callable by LLM agents (e.g., smolag
 * **SampurNER:** Comprehensive NER for 22 Indian languages. [Dataset](https://huggingface.co/datasets/prachuryyaIITG/SampurNER) [Paper](https://github.com/PrachuryyaKaushik/SampurNER/blob/main/SampurNER_AAAI_extended.pdf)
 * **CLASSER:** Multilingual fine-grained datasets for five low-resource Indian languages. [Dataset](https://huggingface.co/datasets/prachuryyaIITG/CLASSER) [Paper](https://aclanthology.org/2025.ijcnlp-long.94/)
 * **MultiCoNER2:** SemEval-23 task contributing extensively to global FgNER research. [Dataset](https://huggingface.co/datasets/MultiCoNER/multiconer_v2) [Paper](https://aclanthology.org/2023.findings-emnlp.134/)
+* **FewNERD:** Largest manually annotated FgNER dataset in English. [Dataset](https://huggingface.co/datasets/DFKI-SLT/few-nerd) [Paper](https://aclanthology.org/2021.acl-long.248/)
+* **FiNERVINER:** Multilingual fine-grained datasets for three vulnerable Indian languages. [Dataset](https://huggingface.co/datasets/prachuryyaIITG/FiNERVINER) [Paper(accepted in LREC'26)](https://lrec2026.info/)
+* **APTFiNER:** Multilingual fine-grained datasets for six low-resource Indian languages. [Dataset](https://huggingface.co/datasets/prachuryyaIITG/APTFiNER) [Paper(accepted in LREC'26)](https://lrec2026.info/)
+* **FiNE-MiBBiC:** Multilingual fine-grained datasets for four low-resource Indian languages. [Dataset](https://github.com/PrachuryyaKaushik/FiNE-MiBBiC) [Paper(under review in ACM TALLIP)](https://dl.acm.org/journal/tallip)
+* **TAFSIL:** Multilingual fine-grained datasets for six low-resource Indian languages in four different taxonomies. [Dataset](https://huggingface.co/datasets/prachuryyaIITG/TAFSIL) [Paper](https://dl.acm.org/doi/10.1145/3726302.3730341)
  
 
 
