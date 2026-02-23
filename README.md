@@ -21,7 +21,16 @@ AWED-FiNER acts as a **Routing Agent Tool** callable by LLM agents (e.g., smolag
 * **FiNE-MiBBiC:** Multilingual fine-grained datasets for four low-resource Indian languages. [Dataset](https://github.com/PrachuryyaKaushik/FiNE-MiBBiC) [Paper(under review in ACM TALLIP)](https://dl.acm.org/journal/tallip)
 * **TAFSIL:** Multilingual fine-grained datasets for six low-resource Indian languages in four different taxonomies. [Dataset](https://huggingface.co/datasets/prachuryyaIITG/TAFSIL) [Paper](https://dl.acm.org/doi/10.1145/3726302.3730341)
  
+## 🔗 Important Links
 
+* Interactive Demo: [AWED-FiNER](https://huggingface.co/spaces/prachuryyaIITG/AWED-FiNER)
+
+* Collection of [53 Expert Detector Models](https://huggingface.co/collections/prachuryyaIITG/awed-finer) for Fine-grained NER in HuggingFace
+
+* [AWED-FiNER paper](https://arxiv.org/abs/2601.10161)
+
+* Author Profile: Prachuryya Kaushik: [LinkedIn](https://www.linkedin.com/in/pkabundant/)  &emsp;  [Google Scholar](https://scholar.google.com/citations?user=dyGLivYAAAAJ&hl=en)  &emsp;  [Hugging Face](https://huggingface.co/prachuryyaIITG) <br>
+Prof. Ashish Anand: [LinkedIn](https://www.linkedin.com/in/anandashish/)  &emsp;  [Google Scholar](https://scholar.google.co.in/citations?user=W7nidBQAAAAJ&hl=en&oi=ao)  &emsp;  [Personal Website](https://www.iitg.ac.in/anand.ashish/)
 
 ## 🛠️ Quick Start (Agentic Tool)
 
@@ -82,29 +91,19 @@ response = client_gemini.models.generate_content(
 print(f"Gemini's Response:\n{response.text}")
 ```
 
-## 🔗 Project Links
-
-* Interactive Demo: [AWED-FiNER](https://huggingface.co/spaces/prachuryyaIITG/AWED-FiNER)
-
-* Model Hub: [Language specific Models](https://huggingface.co/prachuryyaIITG/models) for Fine-grained NER in HuggingFace
-
-* Author Profile: Prachuryya Kaushik: [LinkedIn](https://www.linkedin.com/in/pkabundant/)  &emsp;  [Google Scholar](https://scholar.google.com/citations?user=dyGLivYAAAAJ&hl=en)  &emsp;  [Hugging Face](https://huggingface.co/prachuryyaIITG) <br>
-Prof. Ashish Anand: [LinkedIn](https://www.linkedin.com/in/anandashish/)  &emsp;  [Google Scholar](https://scholar.google.co.in/citations?user=W7nidBQAAAAJ&hl=en&oi=ao)  &emsp;  [Personal Website](https://www.iitg.ac.in/anand.ashish/)
-
-
-
 ## Citations
 
 If you use this tool, please cite the following papers:
 
 ```bibtex
-@misc{kaushik2026awedfiner,
-  title        = {AWED-FiNER: Agents, Web Applications, and Expert Detectors for Fine-grained Named Entity Recognition across 36 Languages for 6.6 Billion Speakers},
-  author       = {Kaushik, Prachuryya and Anand, Ashish},
-  year         = {2026},
-  note         = {arXiv preprint, submitted},
-  archivePrefix= {arXiv},
-  eprint       = {submit/7163987}
+@misc{kaushik2026awedfineragentswebapplications,
+      title={AWED-FiNER: Agents, Web applications, and Expert Detectors for Fine-grained Named Entity Recognition across 36 Languages for 6.6 Billion Speakers}, 
+      author={Prachuryya Kaushik and Ashish Anand},
+      year={2026},
+      eprint={2601.10161},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2601.10161}, 
 }
 
 @inproceedings{kaushik2026sampurner,
