@@ -25,7 +25,7 @@ AWED-FiNER acts as a **Routing Agent Tool** callable by LLM agents (e.g., smolag
 
 * Interactive Demo: [AWED-FiNER](https://huggingface.co/spaces/prachuryyaIITG/AWED-FiNER)
 
-* Collection of [49 Best-performing Expert Detector Models](https://huggingface.co/collections/prachuryyaIITG/awed-finer) for Fine-grained NER in HuggingFace
+* Collection of [54 Best-performing Expert Detector Models](https://huggingface.co/prachuryyaIITG/models) for Fine-grained NER in HuggingFace
 
 * [AWED-FiNER paper](https://arxiv.org/abs/2601.10161)
 
