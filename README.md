@@ -167,7 +167,7 @@ If you use this tool, please cite the following papers:
 
 ```bibtex
 @misc{kaushik2026awedfineragentswebapplications,
-      title={AWED-FiNER: Agents, Web applications, and Expert Detectors for Fine-grained Named Entity Recognition across 36 Languages for 6.6 Billion Speakers}, 
+      title={AWED-PIPER: Agents, Web Applications and Expert Detectors for Personally Identifiable Information Protection and Fine-grained Named Entity Recognition  across 36 languages for 6.6 Billion Speakers}, 
       author={Prachuryya Kaushik and Ashish Anand},
       year={2026},
       eprint={2601.10161},
